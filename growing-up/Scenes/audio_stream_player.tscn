@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cby75vbmt2ijk"]
+
+[ext_resource type="AudioStream" uid="uid://cnmd35c7ld36i" path="res://Scripts/Resources/Entity Resources/the_mountain-game-game-music-508018.mp3" id="1_jxntt"]
+[ext_resource type="Script" uid="uid://b42wa1f6eusca" path="res://Scenes/audio_stream_player.gd" id="2_jxntt"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1517658389]
+process_mode = 3
+stream = ExtResource("1_jxntt")
+volume_db = -3.135
+autoplay = true
+max_polyphony = 10
+script = ExtResource("2_jxntt")

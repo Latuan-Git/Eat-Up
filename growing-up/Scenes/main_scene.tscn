@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ci418s342sa6w"]
+
+[ext_resource type="Script" uid="uid://kjb01qetcfxp" path="res://Scripts/main_scene.gd" id="1_52fb6"]
+[ext_resource type="AudioStream" uid="uid://kuq7qlninn7i" path="res://Sounds/click.wav" id="2_6l7je"]
+
+[node name="MainScene" type="Node" unique_id=655219382 node_paths=PackedStringArray("root_2d_scene", "root_ui_scene", "click_sound")]
+script = ExtResource("1_52fb6")
+root_2d_scene = NodePath("CurrentScene")
+root_ui_scene = NodePath("UI/UIScene")
+click_sound = NodePath("ClickSound")
+
+[node name="CurrentScene" type="Node2D" parent="." unique_id=1603534628]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1147226207]
+process_mode = 3
+
+[node name="UIScene" type="Control" parent="UI" unique_id=1940904731]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=2027889090]
+process_mode = 3
+stream = ExtResource("2_6l7je")
+volume_db = -11.86

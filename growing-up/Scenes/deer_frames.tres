@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cbt4kb7itq0u"]
+
+[ext_resource type="Texture2D" uid="uid://dia3fumyvr37c" path="res://Sprites/Deer1.png" id="1_8od5u"]
+[ext_resource type="Texture2D" uid="uid://bwrc15m3tr8yf" path="res://Sprites/Deer2.png" id="2_1lk7e"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8od5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8od5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1lk7e")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

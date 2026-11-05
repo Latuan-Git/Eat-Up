@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cqw8srwi5mec5"]
+
+[ext_resource type="Script" uid="uid://bq4rbrchqsdmk" path="res://Scripts/Entity Classes/prey_entity_class.gd" id="1_bc2i6"]
+[ext_resource type="Resource" uid="uid://foygjrpe0wjb" path="res://Scripts/Resources/Entity Resources/test_entity.tres" id="2_6jwta"]
+[ext_resource type="Script" uid="uid://cg1ulggtb2fgj" path="res://Scripts/entity_resource.gd" id="2_j5x62"]
+[ext_resource type="AudioStream" uid="uid://ddtommcymk6sr" path="res://Sounds/pickupCoin.wav" id="4_fsnhi"]
+[ext_resource type="Resource" uid="uid://dcwc1qbfxa5h7" path="res://Scripts/Resources/Entity Resources/deer.tres" id="4_y5ruf"]
+[ext_resource type="SpriteFrames" uid="uid://dgion08vaqfv" path="res://Scenes/bun_frames.tres" id="5_fsnhi"]
+[ext_resource type="AudioStream" uid="uid://bbyf8mb6mo372" path="res://Sounds/explosion.mp3" id="5_y5ruf"]
+[ext_resource type="Texture2D" uid="uid://72mmhe8fegss" path="res://Sprites/Bite1.png" id="6_vgait"]
+[ext_resource type="Texture2D" uid="uid://b1nb5bpxemeby" path="res://Sprites/Bite2.png" id="7_j5x62"]
+[ext_resource type="Texture2D" uid="uid://cnstiom6h0fmj" path="res://Sprites/Bite3.png" id="8_y5ruf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50ct6"]
+size = Vector2(126, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bc2i6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgait"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vgait")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j5x62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y5ruf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Prey_Entity" type="CharacterBody2D" unique_id=680901887 node_paths=PackedStringArray("sprite", "spot_area", "spot_collision", "col", "bite_sound", "point_sound", "death_anim")]
+scale = Vector2(0.4, 0.4)
+collision_layer = 4
+collision_mask = 17
+script = ExtResource("1_bc2i6")
+sprite = NodePath("AnimatedSprite2D")
+spot_area = NodePath("SpotRadius")
+spot_collision = NodePath("SpotRadius/CollisionShape2D")
+res_array = Array[ExtResource("2_j5x62")]([ExtResource("2_6jwta"), ExtResource("4_y5ruf")])
+col = NodePath("CollisionShape2D")
+bite_sound = NodePath("DeathSound")
+point_sound = NodePath("ScoreSound")
+death_anim = NodePath("AnimatedSprite2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=203113371]
+shape = SubResource("RectangleShape2D_50ct6")
+
+[node name="SpotRadius" type="Area2D" parent="." unique_id=283033371]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpotRadius" unique_id=695652803]
+shape = SubResource("CircleShape2D_bc2i6")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1419916883]
+stream = ExtResource("5_y5ruf")
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="." unique_id=1063632364]
+stream = ExtResource("4_fsnhi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=206413517]
+z_index = -1
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("5_fsnhi")
+animation = &"run"
+autoplay = "default"
+frame_progress = 0.15818444
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=904849642]
+visible = false
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_vgait")

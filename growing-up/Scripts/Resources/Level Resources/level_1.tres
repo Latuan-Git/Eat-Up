@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelResource" format=3 uid="uid://ckg8v1lcpxnji"]
+
+[ext_resource type="PackedScene" uid="uid://cqw8srwi5mec5" path="res://Scenes/Entities/prey_entity.tscn" id="1_4t5v4"]
+[ext_resource type="Script" uid="uid://6ofyx01sxufi" path="res://Scripts/level_resource.gd" id="1_bn0fv"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_bn0fv")
+points_required = 8500
+entity_types = Array[PackedScene]([ExtResource("1_4t5v4")])
+metadata/_custom_type_script = "uid://6ofyx01sxufi"

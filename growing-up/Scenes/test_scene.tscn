@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bu3jidnyglar3"]
+
+[ext_resource type="Texture2D" uid="uid://lglp6wya52n3" path="res://Sprites/icon.svg" id="1_50ct6"]
+[ext_resource type="PackedScene" uid="uid://bcftyy0difapc" path="res://Scenes/player.tscn" id="2_50ct6"]
+[ext_resource type="Script" uid="uid://cg1ulggtb2fgj" path="res://Scripts/entity_resource.gd" id="4_ak5v8"]
+[ext_resource type="PackedScene" uid="uid://cqw8srwi5mec5" path="res://Scenes/Entities/prey_entity.tscn" id="4_hb2xm"]
+
+[sub_resource type="Resource" id="Resource_hb2xm"]
+resource_local_to_scene = true
+script = ExtResource("4_ak5v8")
+spot_radius = 650.0
+textures = ExtResource("1_50ct6")
+metadata/_custom_type_script = "uid://cg1ulggtb2fgj"
+
+[node name="Node2D" type="Node2D" unique_id=1467523787]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1655251213]
+position = Vector2(157, 300)
+texture = ExtResource("1_50ct6")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=1979604798]
+position = Vector2(693, 479)
+texture = ExtResource("1_50ct6")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=905208931]
+position = Vector2(890, 240)
+texture = ExtResource("1_50ct6")
+
+[node name="Icon4" type="Sprite2D" parent="." unique_id=613032546]
+position = Vector2(506, 111)
+texture = ExtResource("1_50ct6")
+
+[node name="Player" parent="." unique_id=245045020 instance=ExtResource("2_50ct6")]
+
+[node name="Prey_Entity" parent="." unique_id=680901887 instance=ExtResource("4_hb2xm")]
+position = Vector2(259, 127)
+res = SubResource("Resource_hb2xm")

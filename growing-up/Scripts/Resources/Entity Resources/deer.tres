@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EntityResource" format=3 uid="uid://dcwc1qbfxa5h7"]
+
+[ext_resource type="Script" uid="uid://cg1ulggtb2fgj" path="res://Scripts/entity_resource.gd" id="1_6pwkf"]
+[ext_resource type="SpriteFrames" uid="uid://cbt4kb7itq0u" path="res://Scenes/deer_frames.tres" id="2_ru2f1"]
+
+[resource]
+script = ExtResource("1_6pwkf")
+speed = 200.0
+spot_radius = 650.0
+textures = ExtResource("2_ru2f1")
+metadata/_custom_type_script = "uid://cg1ulggtb2fgj"

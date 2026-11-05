@@ -1,0 +1,643 @@
+[gd_scene format=3 uid="uid://cx87gvy3m7u0f"]
+
+[ext_resource type="Script" uid="uid://esfitcn4e8g7" path="res://Scripts/Levels/level_1.gd" id="1_4dpyx"]
+[ext_resource type="PackedScene" uid="uid://bcftyy0difapc" path="res://Scenes/player.tscn" id="1_tlcug"]
+[ext_resource type="Resource" uid="uid://ckg8v1lcpxnji" path="res://Scripts/Resources/Level Resources/level_1.tres" id="2_3mqfk"]
+[ext_resource type="Texture2D" uid="uid://1xyuu5g1il5n" path="res://Sprites/BackgroundNew.png" id="3_jv26f"]
+[ext_resource type="Texture2D" uid="uid://b38gcxjha4x4d" path="res://Sprites/GrassPatch.png" id="5_rb0md"]
+[ext_resource type="Texture2D" uid="uid://bbo6w8dw5nby8" path="res://Sprites/Bush.png" id="6_u5ghp"]
+[ext_resource type="Texture2D" uid="uid://du6u3uyyb5huj" path="res://Sprites/Tree1.png" id="7_hwvp3"]
+[ext_resource type="Texture2D" uid="uid://dvpqea5bhfqov" path="res://Sprites/Tree2.png" id="8_afv7b"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jv26f"]
+normal = Vector2(0.9999866, 0.0051812776)
+
+[node name="Level1" type="Node2D" unique_id=135281668 node_paths=PackedStringArray("timer", "spawn_points", "player")]
+script = ExtResource("1_4dpyx")
+res = ExtResource("2_3mqfk")
+timer = NodePath("Timer")
+spawn_points = [NodePath("Spawn Markers/Marker2D"), NodePath("Spawn Markers/Marker2D2"), NodePath("Spawn Markers/Marker2D3"), NodePath("Spawn Markers/Marker2D4"), NodePath("Spawn Markers/Marker2D5")]
+player = NodePath("Player")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1185140332]
+modulate = Color(0.60933006, 0.6093301, 0.60933006, 1)
+z_index = -2
+position = Vector2(-331, 1402)
+scale = Vector2(6.354, 6.354)
+texture = ExtResource("3_jv26f")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1937066959]
+z_index = -2
+position = Vector2(14, -14)
+scale = Vector2(1.1640925, 1.1640925)
+texture = ExtResource("3_jv26f")
+
+[node name="Player" parent="." unique_id=245045020 instance=ExtResource("1_tlcug")]
+
+[node name="Spawn Markers" type="Node2D" parent="." unique_id=377699577]
+
+[node name="Marker2D" type="Marker2D" parent="Spawn Markers" unique_id=1120737631]
+position = Vector2(-790, -463)
+
+[node name="Marker2D2" type="Marker2D" parent="Spawn Markers" unique_id=1905075657]
+position = Vector2(878, -488)
+
+[node name="Marker2D3" type="Marker2D" parent="Spawn Markers" unique_id=1132721708]
+position = Vector2(-894, 305)
+
+[node name="Marker2D4" type="Marker2D" parent="Spawn Markers" unique_id=856403107]
+position = Vector2(853, 320)
+
+[node name="Marker2D5" type="Marker2D" parent="Spawn Markers" unique_id=1893077436]
+
+[node name="Timer" type="Timer" parent="." unique_id=1539699236]
+one_shot = true
+
+[node name="Environment" type="Node2D" parent="." unique_id=801818507]
+
+[node name="GrassPatch" type="Sprite2D" parent="Environment" unique_id=2135671257]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(715.99994, -267.99994)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("5_rb0md")
+
+[node name="GrassPatch2" type="Sprite2D" parent="Environment" unique_id=1487381711]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(236.00012, -397)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("5_rb0md")
+
+[node name="GrassPatch3" type="Sprite2D" parent="Environment" unique_id=1862158118]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-792.9998, -146.00002)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("5_rb0md")
+
+[node name="GrassPatch4" type="Sprite2D" parent="Environment" unique_id=241487349]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-501.99982, -454)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("5_rb0md")
+
+[node name="GrassPatch5" type="Sprite2D" parent="Environment" unique_id=1784335458]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(206.00012, 299.99994)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("5_rb0md")
+
+[node name="GrassPatch6" type="Sprite2D" parent="Environment" unique_id=656152730]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-464.99982, 441.99994)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("5_rb0md")
+
+[node name="GrassPatch7" type="Sprite2D" parent="Environment" unique_id=1051114155]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(924, 503.99988)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("5_rb0md")
+
+[node name="Bush" type="Sprite2D" parent="Environment" unique_id=801570134]
+y_sort_enabled = true
+position = Vector2(886.00006, -92)
+scale = Vector2(0.095214844, 0.095214844)
+texture = ExtResource("6_u5ghp")
+
+[node name="Bush2" type="Sprite2D" parent="Environment" unique_id=1435812234]
+y_sort_enabled = true
+position = Vector2(-802, -438)
+scale = Vector2(0.0788574, 0.08276367)
+texture = ExtResource("6_u5ghp")
+flip_h = true
+
+[node name="Bush3" type="Sprite2D" parent="Environment" unique_id=1684235890]
+y_sort_enabled = true
+position = Vector2(-830.99994, 451)
+scale = Vector2(0.095214844, 0.095214844)
+texture = ExtResource("6_u5ghp")
+
+[node name="Border" type="Node2D" parent="Environment" unique_id=929426292]
+
+[node name="TopTrees" type="Node2D" parent="Environment/Border" unique_id=928933124]
+
+[node name="Tree1" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=462554546]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(450, -737)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree2" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=727270149]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(367, -723)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree3" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=262940450]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(246.75006, -726.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree4" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1279078232]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(163.75006, -712.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree5" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1990945627]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(53, -733.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree6" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=98096849]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-30, -719.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree7" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=243913105]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-150.24994, -722.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree8" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=531056460]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-233.24994, -708.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree9" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1740948817]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-354, -723.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree10" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=2080977853]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-437, -709.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree11" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1307024302]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-557.24994, -712.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree12" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=83423843]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-640.24994, -698.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree13" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=277343152]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(802, -751.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree14" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1822415474]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(719, -737.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree15" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1636167656]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(598.75006, -740.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree16" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=2066425190]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(515.75006, -726.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree17" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1478766612]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-762, -723.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree18" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1065963034]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-845, -709.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree19" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1993920270]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-965.24994, -712.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree20" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=574681469]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-1048.25, -698.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree21" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=782416362]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(1065, -737.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree22" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=542091600]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(982, -723.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree23" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1574076129]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(861.75006, -726.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree24" type="Sprite2D" parent="Environment/Border/TopTrees" unique_id=1218711332]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(778.75006, -712.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="RightTrees" type="Node2D" parent="Environment/Border" unique_id=935637077]
+
+[node name="Tree25" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=756873207]
+y_sort_enabled = true
+position = Vector2(1072, -620.00006)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree26" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=2137415569]
+y_sort_enabled = true
+position = Vector2(1162, -561)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree27" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=1027528455]
+y_sort_enabled = true
+position = Vector2(1089.75, -440.25)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree28" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=735572346]
+y_sort_enabled = true
+position = Vector2(1179.75, -381.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree29" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=1269268233]
+y_sort_enabled = true
+position = Vector2(1085.75, -299.25)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree30" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=1792354864]
+y_sort_enabled = true
+position = Vector2(1175.75, -240.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree31" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=1854563940]
+y_sort_enabled = true
+position = Vector2(1116.75, -133.25)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree32" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=554274244]
+y_sort_enabled = true
+position = Vector2(1206.75, -74.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree33" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=1523822445]
+y_sort_enabled = true
+position = Vector2(1089.75, 49.75)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree34" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=507180079]
+y_sort_enabled = true
+position = Vector2(1179.75, 108.75006)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree35" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=1603982188]
+y_sort_enabled = true
+position = Vector2(1082.75, 246.75)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree36" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=1632577441]
+y_sort_enabled = true
+position = Vector2(1172.75, 305.75006)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree37" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=2109793631]
+y_sort_enabled = true
+position = Vector2(1085.75, 429.74994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree38" type="Sprite2D" parent="Environment/Border/RightTrees" unique_id=874453330]
+y_sort_enabled = true
+position = Vector2(1175.75, 488.75)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="TopTrees2" type="Node2D" parent="Environment/Border" unique_id=998840119]
+position = Vector2(-36, 1256)
+
+[node name="Tree1" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1658445185]
+y_sort_enabled = true
+position = Vector2(450, -737)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree2" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1191812334]
+y_sort_enabled = true
+position = Vector2(367, -723)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree3" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=796264033]
+y_sort_enabled = true
+position = Vector2(246.75006, -726.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree4" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=2059300558]
+y_sort_enabled = true
+position = Vector2(163.75006, -712.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree5" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=23433195]
+y_sort_enabled = true
+position = Vector2(53, -733.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree6" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1689795728]
+y_sort_enabled = true
+position = Vector2(-30, -719.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree7" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=419780692]
+y_sort_enabled = true
+position = Vector2(-150.24994, -722.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree8" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1572799317]
+y_sort_enabled = true
+position = Vector2(-233.24994, -708.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree9" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=2028280174]
+y_sort_enabled = true
+position = Vector2(-354, -723.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree10" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1890791935]
+y_sort_enabled = true
+position = Vector2(-437, -709.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree11" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=676184586]
+y_sort_enabled = true
+position = Vector2(-557.24994, -712.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree12" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1680185908]
+y_sort_enabled = true
+position = Vector2(-640.24994, -698.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree13" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1349190755]
+y_sort_enabled = true
+position = Vector2(802, -751.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree14" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=141366207]
+y_sort_enabled = true
+position = Vector2(719, -737.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree15" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=484527372]
+y_sort_enabled = true
+position = Vector2(598.75006, -740.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree16" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1514467454]
+y_sort_enabled = true
+position = Vector2(515.75006, -726.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree17" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=508616548]
+y_sort_enabled = true
+position = Vector2(-762, -723.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree18" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=885573779]
+y_sort_enabled = true
+position = Vector2(-845, -709.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree19" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1913297659]
+y_sort_enabled = true
+position = Vector2(-965.24994, -712.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree20" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1149719053]
+y_sort_enabled = true
+position = Vector2(-1048.25, -698.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree21" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=1568157011]
+y_sort_enabled = true
+position = Vector2(1065, -737.24994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree22" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=146319985]
+y_sort_enabled = true
+position = Vector2(982, -723.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree23" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=181734658]
+y_sort_enabled = true
+position = Vector2(861.75006, -726.4999)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree24" type="Sprite2D" parent="Environment/Border/TopTrees2" unique_id=892780920]
+y_sort_enabled = true
+position = Vector2(778.75006, -712.4999)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="RightTrees2" type="Node2D" parent="Environment/Border" unique_id=708457002]
+position = Vector2(-2310, 0)
+
+[node name="Tree25" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1721077114]
+y_sort_enabled = true
+position = Vector2(1072, -620.00006)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree26" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=946274467]
+y_sort_enabled = true
+position = Vector2(1162, -561)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree27" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1606065559]
+y_sort_enabled = true
+position = Vector2(1089.75, -440.25)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree28" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1202829868]
+y_sort_enabled = true
+position = Vector2(1179.75, -381.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree29" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=516663971]
+y_sort_enabled = true
+position = Vector2(1085.75, -299.25)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree30" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1937490212]
+y_sort_enabled = true
+position = Vector2(1175.75, -240.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree31" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=41760765]
+y_sort_enabled = true
+position = Vector2(1116.75, -133.25)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree32" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=536238093]
+y_sort_enabled = true
+position = Vector2(1206.75, -74.24994)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree33" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1922698466]
+y_sort_enabled = true
+position = Vector2(1089.75, 49.75)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree34" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1741586072]
+y_sort_enabled = true
+position = Vector2(1179.75, 108.75006)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree35" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1401665033]
+y_sort_enabled = true
+position = Vector2(1082.75, 246.75)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree36" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=475439376]
+y_sort_enabled = true
+position = Vector2(1172.75, 305.75006)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="Tree37" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1333624764]
+y_sort_enabled = true
+position = Vector2(1085.75, 429.74994)
+scale = Vector2(0.16577148, 0.16577148)
+texture = ExtResource("7_hwvp3")
+
+[node name="Tree38" type="Sprite2D" parent="Environment/Border/RightTrees2" unique_id=1793033581]
+y_sort_enabled = true
+position = Vector2(1175.75, 488.75)
+scale = Vector2(0.19409186, 0.19409186)
+texture = ExtResource("8_afv7b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment" unique_id=1750693328]
+position = Vector2(-1072, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D" unique_id=1093797890]
+shape = SubResource("WorldBoundaryShape2D_jv26f")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Environment" unique_id=76430897]
+position = Vector2(1054, 17)
+rotation = 3.1341615
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2" unique_id=1899759629]
+shape = SubResource("WorldBoundaryShape2D_jv26f")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Environment" unique_id=685446243]
+position = Vector2(-1.9999995, -554.00006)
+rotation = 1.5780944
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D3" unique_id=282850971]
+shape = SubResource("WorldBoundaryShape2D_jv26f")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Environment" unique_id=1990747126]
+position = Vector2(-2.9999998, 565)
+rotation = -1.5716069
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D4" unique_id=495102751]
+shape = SubResource("WorldBoundaryShape2D_jv26f")

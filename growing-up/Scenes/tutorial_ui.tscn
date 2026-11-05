@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://cym6loc4lskyd"]
+
+[ext_resource type="Script" uid="uid://cupsbuohc5lka" path="res://Scenes/tutorial_ui.gd" id="1_ryvqc"]
+[ext_resource type="Texture2D" uid="uid://dia3fumyvr37c" path="res://Sprites/Deer1.png" id="2_k7voy"]
+[ext_resource type="Texture2D" uid="uid://1xyuu5g1il5n" path="res://Sprites/BackgroundNew.png" id="2_oh3mj"]
+[ext_resource type="Texture2D" uid="uid://bwrc15m3tr8yf" path="res://Sprites/Deer2.png" id="3_oh3mj"]
+[ext_resource type="Texture2D" uid="uid://on4lsxskkgyn" path="res://Sprites/Bun2.png" id="4_f2ybc"]
+[ext_resource type="Texture2D" uid="uid://d3wtsbji1mchp" path="res://Sprites/Bun1.png" id="5_7lten"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7voy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k7voy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oh3mj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uabr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f2ybc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7lten")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TutorialUI" type="Control" unique_id=139540634]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ryvqc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=218593309]
+modulate = Color(0.29586652, 0.2958665, 0.2958665, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -216.0
+offset_right = 384.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oh3mj")
+
+[node name="Panel" type="Panel" parent="." unique_id=1763931414]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=1937955439]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -181.0
+offset_top = 59.0
+offset_right = 182.0
+offset_bottom = 82.0
+grow_horizontal = 2
+text = "RUN AT THE ANIMALS AND CLICK ON THEM TO EAT THEM"
+
+[node name="Label2" type="Label" parent="Panel" unique_id=2096661036]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "FILL THE BAR ON THE SIDE BY EATING TO WIN"
+
+[node name="Label3" type="Label" parent="Panel" unique_id=1085066499]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -115.0
+offset_right = 150.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "DON'T RUN OUT OF TIME"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel" unique_id=1981106199]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "CONTINUE"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=185906359]
+position = Vector2(837, 427)
+scale = Vector2(0.07, 0.07)
+sprite_frames = SubResource("SpriteFrames_k7voy")
+autoplay = "default"
+frame_progress = 0.6395705
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=401506418]
+position = Vector2(310, 452)
+scale = Vector2(0.105, 0.105)
+sprite_frames = SubResource("SpriteFrames_uabr5")
+autoplay = "default"
+
+[connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]

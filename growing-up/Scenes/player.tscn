@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bcftyy0difapc"]
+
+[ext_resource type="Script" uid="uid://pe7rb8s8ov6x" path="res://Scripts/player.gd" id="1_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cuc3l3qyby8mx" path="res://Sprites/Idle1.png" id="2_3smsa"]
+[ext_resource type="Texture2D" uid="uid://dbap77ind370g" path="res://Sprites/Idle2.png" id="3_8erm5"]
+[ext_resource type="Script" uid="uid://um3b5q0tnwiq" path="res://Scripts/player_camera.gd" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://bygll3mmc2on6" path="res://Sprites/Walk1.png" id="4_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://dvc5ssyig2c7c" path="res://Sprites/Walk2.png" id="5_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://72mmhe8fegss" path="res://Sprites/Bite1.png" id="7_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://b1nb5bpxemeby" path="res://Sprites/Bite2.png" id="8_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://cnstiom6h0fmj" path="res://Sprites/Bite3.png" id="9_gymyn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gymyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3smsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3smsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8erm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8erm5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_f1ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tx1dd")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coq8p"]
+size = Vector2(38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pu2lt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_f1ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tx1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gymyn")
+}],
+"loop": true,
+"name": &"bite",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_f1ek2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=245045020 node_paths=PackedStringArray("bite_check", "camera", "sprite", "highlight")]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_6t5aa")
+bite_check = NodePath("BiteCheck")
+camera = NodePath("PlayerCamera")
+sprite = NodePath("AnimatedSprite2D")
+highlight = NodePath("AnimatedSprite2D2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=456050022]
+scale = Vector2(0.025, 0.025)
+sprite_frames = SubResource("SpriteFrames_gymyn")
+animation = &"run"
+autoplay = "default"
+frame_progress = 0.37578094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=285444455]
+shape = SubResource("RectangleShape2D_coq8p")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=568389145]
+position = Vector2(1, 1)
+zoom = Vector2(0.9, 0.9)
+limit_left = -1652
+limit_top = -965
+limit_right = 1693
+limit_bottom = 926
+position_smoothing_enabled = true
+script = ExtResource("3_fkybt")
+max_distance = 70.0
+
+[node name="BiteCheck" type="Node2D" parent="." unique_id=874686297]
+scale = Vector2(1.55, 1.55)
+
+[node name="BC1" type="RayCast2D" parent="BiteCheck" unique_id=1571435120]
+target_position = Vector2(40, -15)
+collision_mask = 4
+
+[node name="BC2" type="RayCast2D" parent="BiteCheck" unique_id=196532480]
+target_position = Vector2(50, 0)
+collision_mask = 4
+
+[node name="BC3" type="RayCast2D" parent="BiteCheck" unique_id=1960348082]
+target_position = Vector2(40, 15)
+collision_mask = 4
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1979285256]
+visible = false
+scale = Vector2(0.03, 0.03)
+sprite_frames = SubResource("SpriteFrames_pu2lt")
+autoplay = "default"

@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bolyjp6fp7ida"]
+
+[ext_resource type="Script" uid="uid://xyud0i4xqrxh" path="res://Scripts/title_screen.gd" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://1xyuu5g1il5n" path="res://Sprites/BackgroundNew.png" id="2_p3fck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_62dcu"]
+font_size = 46
+
+[node name="TitleScreen" type="Control" unique_id=999847723 node_paths=PackedStringArray("volume", "text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klylv")
+volume = NodePath("HSlider")
+text = NodePath("Label2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1239113963]
+modulate = Color(0.29586652, 0.2958665, 0.2958665, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -216.0
+offset_right = 384.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p3fck")
+
+[node name="Image" type="TextureRect" parent="." unique_id=742321131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=965561645]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -206.0
+offset_right = 53.0
+offset_bottom = -183.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EAT UP"
+label_settings = SubResource("LabelSettings_62dcu")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1534030464]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -279.0
+offset_right = 100.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 18
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=219585834]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1812239621]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=357146932]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1489753981]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -31.0
+offset_right = 177.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="Label2" type="Label" parent="." unique_id=301076015]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -63.0
+offset_right = 34.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Volume: "
+
+[connection signal="button_down" from="VBoxContainer/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="VBoxContainer/Settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
